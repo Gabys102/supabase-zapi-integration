@@ -83,7 +83,6 @@ python main.py
 
 ### Mensagem recebida no WhatsApp
 
-> Inserir print da mensagem recebida.
 
 <img width="327" height="800" alt="image" src="https://github.com/user-attachments/assets/458ab461-51da-43e2-b131-983fd34fad2f" />
 
