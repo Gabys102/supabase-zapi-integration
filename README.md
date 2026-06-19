@@ -71,10 +71,12 @@ python main.py
 
 ### Estrutura da tabela
 
+
 <img width="1422" height="700" alt="image" src="https://github.com/user-attachments/assets/80c2c6ec-cff0-4694-8690-8d3dbb01749e" />
 
 
 ### Execução do projeto
+
 
 <img width="575" height="236" alt="image" src="https://github.com/user-attachments/assets/e108ae8b-2309-4c55-ad58-ba633b9ffd13" />
 
