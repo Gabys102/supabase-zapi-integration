@@ -22,7 +22,7 @@ zapi_token = os.getenv("ZAPI_TOKEN")
 response = supabase.table("contatos").select("*").execute()
 
 # exibe os contatos
-for contato in response.data:
+for contato in response.dataa[:3]:
     print(contato["nome"], "-",contato["telefone"])
     mensagem = f"Olá, {contato['nome']} tudo bem com você?"
 
