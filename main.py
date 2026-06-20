@@ -11,18 +11,35 @@ load_dotenv()
 url = os.getenv ("SUPABASE_URL")
 key = os.getenv("SUPABASE_KEY")
 
-#conecta ao supabase
-supabase = create_client(url, key)
 
 #conecta zapi
 zapi_instance = os.getenv("ZAPI_INSTANCE")
 zapi_token = os.getenv("ZAPI_TOKEN")
 
+#validar tudo
+if not url:
+    raise ValueError ("SUPABASE_URL não encontrada.")
+if not key:
+    raise ValueError("SUPABASE_KEY não encontrada.")
+
+if not zapi_instance:
+    raise ValueError("ZAPI_INSTANCE não encontrada.")
+
+if not zapi_token:
+    raise ValueError("ZAPI_TOKEN não encontrado.")
+
+#verificar o supabase
+try:
+    supabase= create_client(url,key)
+except Exception as e:
+    raise ValueError(f"Erro ao conectar ao Supabase: {e}")
+
+
 #busca contatos
 response = supabase.table("contatos").select("*").execute()
 
 # exibe os contatos
-for contato in response.dataa[:3]:
+for contato in response.data[:3]:
     print(contato["nome"], "-",contato["telefone"])
     mensagem = f"Olá, {contato['nome']} tudo bem com você?"
 
@@ -48,5 +65,6 @@ for contato in response.dataa[:3]:
         print(f"✅ Mensagem enviada para {contato['nome']}")
     else:
         print(f"❌ Erro ao enviar para {contato['nome']}")
-
+        print(response_zapi.status_code)
+        print(response_zapi.text)
    
