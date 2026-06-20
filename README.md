@@ -33,6 +33,7 @@ SUPABASE_KEY=sua_chave_supabase
 
 ZAPI_INSTANCE=sua_instancia_zapi
 ZAPI_TOKEN=seu_token_zapi
+ZAPI_CLIENT_TOKEN=seu_token-cliente_zapi
 ```
 
 ---
